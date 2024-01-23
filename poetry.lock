@@ -567,7 +567,7 @@ rdflib = "^7.0.0"
 type = "git"
 url = "https://github.com/Janakiram916/ifc2rdfTool"
 reference = "HEAD"
-resolved_reference = "0281850c9f5602983e91536c9870f732d3a449bb"
+resolved_reference = "f0cae97186e1b4ebde8a77a8bc2c100b16617825"
 
 [[package]]
 name = "ifcopenshell"
