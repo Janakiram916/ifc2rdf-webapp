@@ -14,7 +14,7 @@ test:
 
 .PHONY: requirements.txt
 requirements.txt: ## Creates requirements.txt file
-	poetry export -f requirements.txt --output requirements.txt --without-hashes
+	poetry export -f requirements.txt --output ifc2rdf_webapp/requirements.txt --without-hashes
 
 .PHONY: auto-format
 auto-format: ## Automatically formats the code
