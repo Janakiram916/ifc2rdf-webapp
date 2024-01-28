@@ -14,7 +14,7 @@ test:
 
 .PHONY: requirements.txt
 requirements.txt: ## Creates requirements.txt file
-	poetry export -f requirements.txt --output requirements.txt
+	poetry export -f requirements.txt --output requirements.txt --without-hashes
 
 .PHONY: auto-format
 auto-format: ## Automatically formats the code
@@ -27,4 +27,4 @@ lint: ## Execute lint script located in the bin folder of the dt/config repo
 	poetry run ruff check ./ifc2rdf_webapp/tools --fix
 
 .PHONY: check
-check: auto-format lint test ## Runs all code checks and tests
+check: auto-format lint test requirements.txt## Runs all code checks and tests
