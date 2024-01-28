@@ -1,12 +1,11 @@
 import streamlit as st
 
-from ifc2rdf_webapp.tools.rdf_helper import (
-    get_rdf_entities,
-    get_instances_of_rdf_resource,
-    get_triples_based_on_instance_name,
-    get_instance_id_from_rdf_resource,
-    get_triples_based_on_instance_uri,
-)
+from ifc2rdf_webapp.tools.rdf_helper import get_rdf_entities
+from ifc2rdf_webapp.tools.rdf_helper import get_instances_of_rdf_resource
+from ifc2rdf_webapp.tools.rdf_helper import get_triples_based_on_instance_name
+from ifc2rdf_webapp.tools.rdf_helper import get_instance_id_from_rdf_resource
+from ifc2rdf_webapp.tools.rdf_helper import get_triples_based_on_instance_uri
+
 
 
 def execute():
