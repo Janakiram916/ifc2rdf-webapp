@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "3.11.7"
 streamlit = "^1.30.0"
-ifcopenshell = "^0.7.0.231218"
+ifcopenshell = "0.7.0.230818"
 matplotlib = "^3.8.2"
 plotly = "^5.18.0"
 pandas = "^2.2.0"

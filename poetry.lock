@@ -536,7 +536,7 @@ develop = false
 [package.dependencies]
 black = "^23.12.1"
 icecream = "^2.1.3"
-ifcopenshell = "^0.7.0.231218"
+ifcopenshell = "0.7.0.230818"
 isort = "^5.13.2"
 lark = "^1.1.8"
 pylint = "^3.0.3"
@@ -548,34 +548,42 @@ rdflib = "^7.0.0"
 type = "git"
 url = "https://github.com/Janakiram916/ifc2rdfTool"
 reference = "HEAD"
-resolved_reference = "5491cfe4ead480f8c2d7b616bcee0301414168ec"
+resolved_reference = "0b79f7f7dbd2b4ce9db19f4be029744ca5b9e921"
 
 [[package]]
 name = "ifcopenshell"
-version = "0.7.0.231218"
+version = "0.7.0.230818"
 description = "Python bindings, utility functions, and high-level API for IfcOpenShell"
 optional = false
-python-versions = "<3.12,>=3.6"
+python-versions = "*"
 files = [
-    {file = "ifcopenshell-0.7.0.231218-py310-none-macosx_10_15_x86_64.whl", hash = "sha256:ec8e44c077b29c29ea2b20b153da0ce5af68ea6b3eb2ee8600feda8abec35f10"},
-    {file = "ifcopenshell-0.7.0.231218-py310-none-macosx_11_0_arm64.whl", hash = "sha256:67933b49a70073d695b3279dbadc8ecac71bb8ea63d2c65b7ec2da5f31a53fa9"},
-    {file = "ifcopenshell-0.7.0.231218-py310-none-manylinux_2_31_x86_64.whl", hash = "sha256:a97c9adabe705163dd060f82968d767b458207fa242ae99daebce794b45d8586"},
-    {file = "ifcopenshell-0.7.0.231218-py310-none-win_amd64.whl", hash = "sha256:7a7d595ae6bde05a311b575af78a5887d5d90a850bc829fa0b20de9c39fe1d58"},
-    {file = "ifcopenshell-0.7.0.231218-py311-none-macosx_10_15_x86_64.whl", hash = "sha256:e087ad10e1ad298d3ed5ea9b4fabe5d79088e91fbd07deac4717d5e19e1f7bd9"},
-    {file = "ifcopenshell-0.7.0.231218-py311-none-macosx_11_0_arm64.whl", hash = "sha256:5b29bd68eca15526c025d0d9ac75cc12698983538eed05769146fc7113a60051"},
-    {file = "ifcopenshell-0.7.0.231218-py311-none-manylinux_2_31_x86_64.whl", hash = "sha256:7fea9fad84f995e9c18b00b5b5e690019c79839a4c4cfdc5a9f04c8356756095"},
-    {file = "ifcopenshell-0.7.0.231218-py311-none-win_amd64.whl", hash = "sha256:a7d3e5d319f9632574cf038a93f6cf191a0f9b4bcf3a6946433447383f86e6f1"},
-    {file = "ifcopenshell-0.7.0.231218-py36-none-macosx_10_15_x86_64.whl", hash = "sha256:cfcde605f5fcd829642ded9279bc4c499f365f47efd78a0851bfc6b99641bb79"},
-    {file = "ifcopenshell-0.7.0.231218-py36-none-macosx_11_0_arm64.whl", hash = "sha256:5ec07a45e12da4f0ee9596ee35d64c096df65c77ddecb1fd99b8c33e1a152fad"},
-    {file = "ifcopenshell-0.7.0.231218-py36-none-manylinux_2_31_x86_64.whl", hash = "sha256:d4620c839636b3fe00c0e43805ea0d6468ac2b9d90257220e3a91ceca4d00405"},
-    {file = "ifcopenshell-0.7.0.231218-py36-none-win_amd64.whl", hash = "sha256:8fcfe977325854201ac0a5e61c5e1183600f6bc3dd137268b68188350d27e77c"},
-    {file = "ifcopenshell-0.7.0.231218-py37-none-macosx_10_15_x86_64.whl", hash = "sha256:c0d8c8acf2a9d0d9bdade10d0c5e30b736b3e9c6bc4ca612531d5f89c1715883"},
-    {file = "ifcopenshell-0.7.0.231218-py37-none-macosx_11_0_arm64.whl", hash = "sha256:f8780827773567205490b8ff8ff5c961a65bd4e7d7ec948d6cb27f347e2204e2"},
-    {file = "ifcopenshell-0.7.0.231218-py37-none-manylinux_2_31_x86_64.whl", hash = "sha256:6becf93b32ee9049f60bcfe7a6f00df161df9949fb0e6ce568051923946a6668"},
+    {file = "ifcopenshell-0.7.0.230818-py310-none-macosx_10_15_x86_64.whl", hash = "sha256:2ae1a918769a84af0bc28e3454a972151bc7352a68f15394a4d0ce0195dd2f94"},
+    {file = "ifcopenshell-0.7.0.230818-py310-none-macosx_11_0_arm64.whl", hash = "sha256:e783d7a27ecc6f278dd6e2427345f83c0c23a6d982492f8ee263eb547aab7f03"},
+    {file = "ifcopenshell-0.7.0.230818-py310-none-manylinux1_x86_64.whl", hash = "sha256:5913e9f0c35b2d7d8124747ad8e54e407d59210153fcce3e4ac64cf39fe2b93f"},
+    {file = "ifcopenshell-0.7.0.230818-py310-none-win_amd64.whl", hash = "sha256:04db5a10f4ca63228102647a93e237e0d2b12fa01c7900b4427d37129afaeba0"},
+    {file = "ifcopenshell-0.7.0.230818-py311-none-macosx_10_15_x86_64.whl", hash = "sha256:45377226e231baebd7c649d52ee9cae16ba28b5904143fa1eea5068ea0ffe923"},
+    {file = "ifcopenshell-0.7.0.230818-py311-none-macosx_11_0_arm64.whl", hash = "sha256:7281d783bcccc247e6c35f383cbd856043cbb7a5e2c4c3ee524cf2ce038a6c6d"},
+    {file = "ifcopenshell-0.7.0.230818-py311-none-manylinux1_x86_64.whl", hash = "sha256:00573e76fb0f60ccd8957028644b30e70d601a0c97379430db2d86425727a9f3"},
+    {file = "ifcopenshell-0.7.0.230818-py311-none-win_amd64.whl", hash = "sha256:7cae083e0cf046537403e1e042cba6e5ef0cb4fa0c0db398322a261d0c6b77fe"},
+    {file = "ifcopenshell-0.7.0.230818-py36-none-macosx_10_15_x86_64.whl", hash = "sha256:88a6d21085a2b5f9e348d816d4e662d5aa77b038b13c4ceb92f062ecef2487b2"},
+    {file = "ifcopenshell-0.7.0.230818-py36-none-macosx_11_0_arm64.whl", hash = "sha256:5f1117d9f756d2a206a06b191bff0eab759f41c7db63a275aebb5ce92ce18003"},
+    {file = "ifcopenshell-0.7.0.230818-py36-none-manylinux1_x86_64.whl", hash = "sha256:4b6715753069c28aeec3e1913898b378e5e1f6697cdb4325245c5401c091b9de"},
+    {file = "ifcopenshell-0.7.0.230818-py36-none-win_amd64.whl", hash = "sha256:3933580221774ad1d59d5d3b79795d3d5c89eda94b6f38b62d10a3201e72a528"},
+    {file = "ifcopenshell-0.7.0.230818-py37-none-macosx_10_15_x86_64.whl", hash = "sha256:76b4b6c0736a6e7c2ba129bc7e5bdc9b6771aefaa5f4555f138d77095d929144"},
+    {file = "ifcopenshell-0.7.0.230818-py37-none-macosx_11_0_arm64.whl", hash = "sha256:69e7019f7ccbe0e70003ef324b4f57bce1b0e2b5f67d0c7a3a8d36a5f647f5b7"},
+    {file = "ifcopenshell-0.7.0.230818-py37-none-manylinux1_x86_64.whl", hash = "sha256:306fedd96c87df8bfedc1b8b2886903b3e652889873dc804e8fe9528b718a1b4"},
+    {file = "ifcopenshell-0.7.0.230818-py37-none-win_amd64.whl", hash = "sha256:dec42a705a5d4ddb791f351fcec8163eb048487608f3340880e82477db9cc8f1"},
+    {file = "ifcopenshell-0.7.0.230818-py38-none-macosx_10_15_x86_64.whl", hash = "sha256:31c51acc83c31bbb4a7d9a47c1bc691ba640f1effea8c324f2ee25a7cfd71d14"},
+    {file = "ifcopenshell-0.7.0.230818-py38-none-macosx_11_0_arm64.whl", hash = "sha256:b44ff10afeee7bde7a39325f0fe186c09d263e1e173d77a4c94e47d4377c6c65"},
+    {file = "ifcopenshell-0.7.0.230818-py38-none-manylinux1_x86_64.whl", hash = "sha256:42d18a9ec77ad92965f7735cd82e510a537a39999961389321c8b9e45b542e48"},
+    {file = "ifcopenshell-0.7.0.230818-py38-none-win_amd64.whl", hash = "sha256:1519ce4751f5ba4a78fa05ff20c75ccb6e4f929af13d0827829b91d6e5f95633"},
+    {file = "ifcopenshell-0.7.0.230818-py39-none-macosx_10_15_x86_64.whl", hash = "sha256:d74bdb09dbb5326a798a69c7fd5c4ff9163139796ebe88803fb6f95aa7cfcd5b"},
+    {file = "ifcopenshell-0.7.0.230818-py39-none-macosx_11_0_arm64.whl", hash = "sha256:6448d184aca7d8bceb9a6b16b98a82f8306ff9e3699b12f99a2d59e6a5791ba8"},
+    {file = "ifcopenshell-0.7.0.230818-py39-none-manylinux1_x86_64.whl", hash = "sha256:6aeba4b2ca05235909fac5aa862629802ec0ed5d1478fd906ee7ca5a334de0c7"},
+    {file = "ifcopenshell-0.7.0.230818-py39-none-win_amd64.whl", hash = "sha256:55f8178f7f2715855d6a9f7c4ac38bc1313ff7486679fd1980c8a753a329b872"},
 ]
 
 [package.extras]
-date = ["isodate"]
 geometry = ["mathutils"]
 
 [[package]]
@@ -2048,4 +2056,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "3.11.7"
-content-hash = "fce7a9d357030b1a991c52de7b617b65421ff227739de092acf2a773300d72b1"
+content-hash = "74cabffe7ded9d21f873e7cd8ce899ce2df431854e04991d0dc0db6672b35360"
