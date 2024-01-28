@@ -1,4 +1,3 @@
-import time
 
 import ifcopenshell
 import streamlit as st
@@ -67,7 +66,7 @@ def main():
 
     # Add File Name and Success Message
     if "is_file_loaded" in session and session["is_file_loaded"]:
-        st.sidebar.success(f'Project successfully loaded')
+        st.sidebar.success('Project successfully loaded')
         st.sidebar.write("🔃 You can reload a new file  ")
 
         col1, col2 = st.columns([2, 1])
@@ -78,7 +77,7 @@ def main():
                    "🐙 [ifc2rdfTool](https://github.com/Janakiram916/ifc2rdfTool).")
         col2.button("🔃 Start Conversion", key="generated_file", on_click=generate_rdf_data)
         if "is_rdf_data_generated" in session and session["is_rdf_data_generated"]:
-            col2.success(f'Data conversion is successful')
+            col2.success('Data conversion is successful')
             col2.write("You can now ⬇️ Download rdf file ")
             col2.download_button('⬇️ Download RDF', key="download_rdf", data=session.rdf_data,
                                  file_name=f"{session.file_name.split('.')[0]}.ttl", on_click=generate_rdf_data)

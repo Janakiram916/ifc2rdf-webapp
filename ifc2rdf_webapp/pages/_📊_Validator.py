@@ -8,7 +8,7 @@ def initialize_session_state():
     session["SequenceData"] = {}
     session["CostScheduleData"] = {}
 
-    
+
 def execute():
     st.header(" 📊 Validator ")
 

@@ -20,6 +20,7 @@ style = {
     "ytick.labelsize": 12,
 }
 
+
 def get_elements_graph(file):
     types = ifchelper.get_types(file, "IfcBuildingElement")
     types_count = ifchelper.get_type_occurence(file, types)
@@ -40,6 +41,7 @@ def get_elements_graph(file):
     ax.axis()
     # ax.xticks(y_pos, objects, rotation=90, size=10)
     return ax.figure
+
 
 def get_high_frequency_entities_graph(file):
     types = ifchelper.get_types(file)
@@ -64,8 +66,10 @@ def get_high_frequency_entities_graph(file):
     # ax.xticks(y_pos, objects, rotation=90, size=10)
     return ax.figure
 
+
 def load_graph(dataframe, quantity_set, quantity, user_option):
     import plotly.express as px
+
     if quantity != "Count":
         column_name = f"{quantity_set}.{quantity}"
         figure_pie_chart = px.pie(

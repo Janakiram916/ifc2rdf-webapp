@@ -1,4 +1,3 @@
-from icecream import ic
 from ifc2rdftool.ifc2rdf_tool import initialize_graph
 from rdflib import Graph, URIRef
 
@@ -79,14 +78,17 @@ def get_instance_id_from_rdf_resource(rdf_graph: Graph, resource_name: str):
         return sorted(items_data[resource_name])
 
 
-def get_triples_based_on_instance_name(rdf_graph: Graph, instance_label: str, rdf_resource: str):
+def get_triples_based_on_instance_name(
+    rdf_graph: Graph, instance_label: str, rdf_resource: str
+):
     query_result = rdf_graph.query(_CLASS_QUERY)
-    resource = URIRef('')
+    resource = URIRef("")
     for row in query_result:
         if row.resource.fragment == rdf_resource:
             resource = row.resource
-    instance_rule_query = _GET_INSTANCE_GRAPH_BASED_ON_NAME_QUERY.replace(_INSTANCE_NAME, instance_label).replace(
-        _CLASS_URI, resource)
+    instance_rule_query = _GET_INSTANCE_GRAPH_BASED_ON_NAME_QUERY.replace(
+        _INSTANCE_NAME, instance_label
+    ).replace(_CLASS_URI, resource)
     graph = initialize_graph()
     construct_query_result = rdf_graph.query(instance_rule_query)
     for triple in construct_query_result:
@@ -97,11 +99,13 @@ def get_triples_based_on_instance_name(rdf_graph: Graph, instance_label: str, rd
 
 def get_triples_based_on_instance_uri(rdf_graph: Graph, instance_id: str):
     query_result = rdf_graph.query(_CLASS_QUERY)
-    instance_uri = URIRef('')
+    instance_uri = URIRef("")
     for row in query_result:
         if row.instance.fragment == instance_id:
             instance_uri = row.instance
-    instance_rule_query = _GET_INSTANCE_GRAPH_BASED_ON_URI_QUERY.replace(_INSTANCE_URI, instance_uri)
+    instance_rule_query = _GET_INSTANCE_GRAPH_BASED_ON_URI_QUERY.replace(
+        _INSTANCE_URI, instance_uri
+    )
     graph = initialize_graph()
     construct_query_result = rdf_graph.query(instance_rule_query)
     for triple in construct_query_result:
