@@ -10,7 +10,7 @@ ifc-viewer:
 
 .PHONEY: test
 test:
-	poetry run pytest -vv -s .\tests
+	poetry run pytest -vv -s ./tests
 
 .PHONY: requirements.txt
 requirements.txt: ## Creates requirements.txt file

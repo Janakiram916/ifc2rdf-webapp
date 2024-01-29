@@ -10,6 +10,9 @@ tools/ifc_viewer/
 # C extensions
 *.so
 
+# pyenv
+.python-version
+
 # Distribution / packaging
 .Python
 build/
