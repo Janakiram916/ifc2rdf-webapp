@@ -10,6 +10,11 @@ def initialize_session_state():
 
 
 def execute():
+    st.set_page_config(
+        layout="wide",
+        page_title="RDF Validator ©karlapudi",
+        page_icon="📊",
+    )
     st.header(" 📊 Validator ")
 
     if "rdf_data" in session:

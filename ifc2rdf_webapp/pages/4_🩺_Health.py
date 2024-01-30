@@ -217,6 +217,11 @@ def edit_object_data(object_id, attribute):
 
 def execute():
     initialise_debug_props()
+    st.set_page_config(
+        layout="wide",
+        page_title="IFC Explorer ©karlapudi",
+        page_icon="🩺",
+    )
     st.header(" 🩺 Model Health")
 
     if "isHealthDataLoaded" not in session:

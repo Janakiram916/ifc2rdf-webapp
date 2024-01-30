@@ -229,6 +229,11 @@ def write_health_data():
 
 def execute():
     initialise_debug_props()
+    st.set_page_config(
+        layout="wide",
+        page_title="IFC Viewer ©karlapudi",
+        page_icon="🎮",
+    )
     st.header("🎮 IFC.js Viewer")
     if "ifc_file" in session and session["ifc_file"]:
         if "ifc_js_response" not in session:

@@ -40,6 +40,7 @@ def execute():
         page_title="Quantities",
         layout="wide",
         initial_sidebar_state="expanded",
+        page_icon="🧮",
     )
     st.header(" 🧮 Model Quantities")
     if "IsDataFrameLoaded" not in session:

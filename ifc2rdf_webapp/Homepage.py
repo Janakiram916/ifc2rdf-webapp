@@ -49,7 +49,7 @@ def main():
     st.set_page_config(
         layout="wide",
         page_title="IFC Processor ©karlapudi",
-        page_icon="✍️",
+        page_icon="🏢",
     )
     st.title("IFC Processor")
     st.markdown(
@@ -73,7 +73,7 @@ def main():
         col1.subheader(f'Start Exploring "{get_project_name()}"')
 
         col2.subheader("IFC2RDF convertor")
-        col2.write("IFC2RDF convertor converty your IFC data to RDF based on the library "
+        col2.write("IFC2RDF convertor converts IFC data to RDF based on the library "
                    "🐙 [ifc2rdfTool](https://github.com/Janakiram916/ifc2rdfTool).")
         col2.button("🔃 Start Conversion", key="generated_file", on_click=generate_rdf_data)
         if "is_rdf_data_generated" in session and session["is_rdf_data_generated"]:
