@@ -93,20 +93,5 @@ def test_should_return_triples_based_on_instance_uri() -> None:
         test_graph, "04XCdhzWXDtBhVSPPuhCyY"
     )
     actual_graph = Graph().parse(data=actually_constructed_graph)
-    expected_triples = """
-    @prefix bot: <https://w3id.org/bot#> .
-    @prefix core: <https://w3id.org/digitalconstruction/core#> .
-    @prefix inst: <https://w3id.org/digitalconstruction/instance#> .
-
-    inst:04XCdhzWXDtBhVSPPuhCyY a bot:Building ;
-        bot:hasStorey inst:04XCdhzWXDtBhVSPQ7KoGO,
-            inst:04XCdhzWXDtBhVSPQ7KoGx,
-            inst:04XCdhzWXDtBhVSPQ7KoNL,
-            inst:04XCdhzWXDtBhVSPQ7KoNt,
-            inst:04XCdhzWXDtBhVSPQ7KpcK ;
-        core:hasGlobalID "04XCdhzWXDtBhVSPPuhCyY" ;
-        core:hasLabel "CIB" ;
-        core:hasName "CIB" .
-        """
-    expected_graph = Graph().parse(data=expected_triples)
+    expected_graph = Graph().parse(source="tests/resources/building_data.ttl")
     assert isomorphic(actual_graph, expected_graph)

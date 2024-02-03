@@ -41,6 +41,11 @@ def execute():
         layout="wide",
         initial_sidebar_state="expanded",
         page_icon="🧮",
+        menu_items={
+            'Get Help': 'mailto:janakiramkarlapudi841@gmail.com',
+            'Report a bug': "https://github.com/Janakiram916/ifc2rdf-webapp/issues",
+            'About': "## IFC Data explorer. Developed to investigate the IFC data!"
+        }
     )
     st.header(" 🧮 Model Quantities")
     if "IsDataFrameLoaded" not in session:
