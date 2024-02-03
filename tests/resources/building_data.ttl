@@ -1,0 +1,167 @@
+@prefix bot: <https://w3id.org/bot#> .
+@prefix core: <https://w3id.org/digitalconstruction/core#> .
+@prefix inst: <https://w3id.org/digitalconstruction/instance#> .
+
+inst:04XCdhzWXDtBhVSPPuhCyY a bot:Building ;
+    bot:hasStorey inst:04XCdhzWXDtBhVSPQ7KoGO,
+        inst:04XCdhzWXDtBhVSPQ7KoGx,
+        inst:04XCdhzWXDtBhVSPQ7KoNL,
+        inst:04XCdhzWXDtBhVSPQ7KoNt,
+        inst:04XCdhzWXDtBhVSPQ7KpcK ;
+    core:hasGlobalID "04XCdhzWXDtBhVSPPuhCyY" ;
+    core:hasLabel "CIB" ;
+    core:hasName "CIB" .
+
+inst:04XCdhzWXDtBhVSPQ7KoGO a bot:Storey ;
+    bot:containsElement <https://w3id.org/digitalconstruction/instance#0NETAEud13PQlR7K7gJ4$E>,
+        inst:0NETAEud13PQlR7K7gJ4n_,
+        inst:0NETAEud13PQlR7K7gJ4ov,
+        inst:0NETAEud13PQlR7K7gJ4sy,
+        inst:0f_jxKQ1L7TQHBpe0ltUIh,
+        inst:0f_jxKQ1L7TQHBpe8ltUIh,
+        inst:2rvVZuy3X0l9ATwUENTjbi,
+        <https://w3id.org/digitalconstruction/instance#3Tn8vdAOX0QxqbKYoVvs$b>,
+        inst:3Tn8vdAOX0QxqbKYoVvsY3,
+        inst:3Tn8vdAOX0QxqbKYoVvsZJ,
+        inst:3Tn8vdAOX0QxqbKYoVvs_C,
+        inst:3Tn8vdAOX0QxqbKYoVvs_X,
+        inst:3Tn8vdAOX0QxqbKYoVvsan,
+        inst:3Tn8vdAOX0QxqbKYoVvscY,
+        inst:3Tn8vdAOX0QxqbKYoVvsdx,
+        inst:3Tn8vdAOX0QxqbKYoVvsmp,
+        inst:3Tn8vdAOX0QxqbKYoVvsxQ,
+        inst:3Tn8vdAOX0QxqbKYoVvsyc ;
+    bot:hasSpace inst:0beXDTXl5DD8T_Ld2qzYIV ;
+    core:hasGlobalID "04XCdhzWXDtBhVSPQ7KoGO" ;
+    core:hasLabel "Level 4" ;
+    core:hasName "Level 4" .
+
+inst:04XCdhzWXDtBhVSPQ7KoGx a bot:Storey ;
+    bot:containsElement <https://w3id.org/digitalconstruction/instance#0f_jxKQ1L7TQHBpe8ltV$s>,
+        inst:0f_jxKQ1L7TQHBpe8ltV6X,
+        inst:0f_jxKQ1L7TQHBpe8ltV8r,
+        inst:0f_jxKQ1L7TQHBpe8ltV9w,
+        inst:0f_jxKQ1L7TQHBpe8ltVim,
+        inst:0f_jxKQ1L7TQHBpe8ltVlN,
+        inst:0f_jxKQ1L7TQHBpe8ltVwM,
+        inst:0f_jxKQ1L7TQHBpe8ltVya,
+        <https://w3id.org/digitalconstruction/instance#0uUHcDv$52GPXRv8oFn40F>,
+        <https://w3id.org/digitalconstruction/instance#0uUHcDv$52GPXRv8oFn4AT>,
+        <https://w3id.org/digitalconstruction/instance#0uUHcDv$52GPXRv8oFn4BP>,
+        <https://w3id.org/digitalconstruction/instance#0uUHcDv$52GPXRv8oFn4C4>,
+        <https://w3id.org/digitalconstruction/instance#0uUHcDv$52GPXRv8oFn4DC>,
+        <https://w3id.org/digitalconstruction/instance#0uUHcDv$52GPXRv8oFn4E0>,
+        <https://w3id.org/digitalconstruction/instance#0uUHcDv$52GPXRv8oFn4Ee>,
+        <https://w3id.org/digitalconstruction/instance#0uUHcDv$52GPXRv8oFn4Fe>,
+        <https://w3id.org/digitalconstruction/instance#0uUHcDv$52GPXRv8oFn4ox>,
+        <https://w3id.org/digitalconstruction/instance#0uUHcDv$52GPXRv8oFn4pH>,
+        <https://w3id.org/digitalconstruction/instance#0uUHcDv$52GPXRv8oFn4qj>,
+        <https://w3id.org/digitalconstruction/instance#0uUHcDv$52GPXRv8oFn4ri>,
+        <https://w3id.org/digitalconstruction/instance#0uUHcDv$52GPXRv8oFn4sm>,
+        <https://w3id.org/digitalconstruction/instance#0uUHcDv$52GPXRv8oFn4tt>,
+        inst:1sOXIRzk52Wx5umJCTNJmK,
+        inst:1sOXIRzk52Wx5umJCTNJop,
+        inst:1sOXIRzk52Wx5umJCTNJpL,
+        <https://w3id.org/digitalconstruction/instance#2a$_lJKf9C38$j063RW0KD>,
+        inst:2rvVZuy3X0l9ATwUENTjbQ,
+        <https://w3id.org/digitalconstruction/instance#3LC5bzgVD3Kg2ks$jx6OWD>,
+        <https://w3id.org/digitalconstruction/instance#3LC5bzgVD3Kg2ks$jx6OXZ>,
+        <https://w3id.org/digitalconstruction/instance#3LC5bzgVD3Kg2ks$jx6OY4>,
+        <https://w3id.org/digitalconstruction/instance#3LC5bzgVD3Kg2ks$jx6OZ3>,
+        <https://w3id.org/digitalconstruction/instance#3LC5bzgVD3Kg2ks$jx6OaH>,
+        <https://w3id.org/digitalconstruction/instance#3LC5bzgVD3Kg2ks$jx6Oal> ;
+    bot:hasSpace inst:0beXDTXl5DD8T_Ld2qzYI6,
+        inst:1RUXumxMXEpBDqH_kH6PrD,
+        inst:1RUXumxMXEpBDqH_kH6PrF,
+        inst:1RUXumxMXEpBDqH_kH6Prm ;
+    core:hasGlobalID "04XCdhzWXDtBhVSPQ7KoGx" ;
+    core:hasLabel "Level 3" ;
+    core:hasName "Level 3" .
+
+inst:04XCdhzWXDtBhVSPQ7KoNL a bot:Storey ;
+    bot:containsElement inst:2nzBOJCJX6VxFvqeGy5Gxo,
+        inst:2rvVZuy3X0l9ATwUENTXeJ,
+        inst:2rvVZuy3X0l9ATwUENTXfh,
+        inst:2rvVZuy3X0l9ATwUENTXgf,
+        inst:2rvVZuy3X0l9ATwUENTXhZ,
+        inst:2rvVZuy3X0l9ATwUENTXix,
+        inst:2rvVZuy3X0l9ATwUENTXjw,
+        inst:2rvVZuy3X0l9ATwUENTXmp,
+        inst:2rvVZuy3X0l9ATwUENTXni,
+        inst:2rvVZuy3X0l9ATwUENTXob,
+        inst:2rvVZuy3X0l9ATwUENTXqt,
+        inst:2rvVZuy3X0l9ATwUENTXr6,
+        inst:2rvVZuy3X0l9ATwUENTXrw,
+        inst:2rvVZuy3X0l9ATwUENTXsO,
+        inst:2rvVZuy3X0l9ATwUENTXtm,
+        inst:2rvVZuy3X0l9ATwUENTjb6,
+        <https://w3id.org/digitalconstruction/instance#3IgqlyNZb9CR1JNQVbt$eA>,
+        <https://w3id.org/digitalconstruction/instance#3IgqlyNZb9CR1JNQVbt$kz>,
+        <https://w3id.org/digitalconstruction/instance#3IgqlyNZb9CR1JNQVbt$sg>,
+        inst:3IgqlyNZb9CR1JNQVbt_5i,
+        inst:3IgqlyNZb9CR1JNQVbt_6H,
+        inst:3IgqlyNZb9CR1JNQVbt_6L,
+        inst:3IgqlyNZb9CR1JNQVbt_7A,
+        inst:3IgqlyNZb9CR1JNQVbt_7X,
+        inst:3IgqlyNZb9CR1JNQVbt_7b,
+        inst:3IgqlyNZb9CR1JNQVbt_7f,
+        inst:3IgqlyNZb9CR1JNQVbt_7j,
+        inst:3IgqlyNZb9CR1JNQVbt_7n,
+        inst:3IgqlyNZb9CR1JNQVbt_7r,
+        inst:3IgqlyNZb9CR1JNQVbt_7z,
+        inst:3Tn8vdAOX0QxqbKYoVvt6G,
+        inst:3Tn8vdAOX0QxqbKYoVvtPR,
+        inst:3Tn8vdAOX0QxqbKYoVvtQm,
+        inst:3Tn8vdAOX0QxqbKYoVvtUL,
+        inst:3Tn8vdAOX0QxqbKYoVvtV2 ;
+    bot:hasSpace inst:0beXDTXl5DD8T_Ld2qzYG7,
+        inst:1RUXumxMXEpBDqH_kH6Prq,
+        inst:1RUXumxMXEpBDqH_kH6Prv,
+        inst:1RUXumxMXEpBDqH_kH6Prw ;
+    core:hasGlobalID "04XCdhzWXDtBhVSPQ7KoNL" ;
+    core:hasLabel "Level 2" ;
+    core:hasName "Level 2" .
+
+inst:04XCdhzWXDtBhVSPQ7KoNt a bot:Storey ;
+    bot:containsElement inst:0LSOwspUv6Hvv0yaNWYYRn,
+        inst:0mhevRo9r5X8JNSuTZMdK6,
+        inst:0mhevRo9r5X8JNSuTZMdNm,
+        inst:0mhevRo9r5X8JNSuTZNOZH,
+        inst:0mhevRo9r5X8JNSuTZNOfV,
+        inst:0mhevRo9r5X8JNSuTZNOgs,
+        inst:0mhevRo9r5X8JNSuTZNOhA,
+        inst:0mhevRo9r5X8JNSuTZNOiX,
+        <https://w3id.org/digitalconstruction/instance#0mhevRo9r5X8JNSuTZNOj$>,
+        inst:0mhevRo9r5X8JNSuTZNOkK,
+        inst:0mhevRo9r5X8JNSuTZNOlU,
+        inst:2rvVZuy3X0l9ATwUENTX_E,
+        inst:2rvVZuy3X0l9ATwUENTX_n,
+        inst:2rvVZuy3X0l9ATwUENTYHE,
+        inst:2rvVZuy3X0l9ATwUENTYQY,
+        inst:2rvVZuy3X0l9ATwUENTYSe,
+        inst:2rvVZuy3X0l9ATwUENTZ4X,
+        inst:2rvVZuy3X0l9ATwUENTZ7Z,
+        inst:2rvVZuy3X0l9ATwUENTZiw,
+        <https://w3id.org/digitalconstruction/instance#2rvVZuy3X0l9ATwUENTZl$>,
+        inst:2rvVZuy3X0l9ATwUENTiYj,
+        inst:2rvVZuy3X0l9ATwUENTibB,
+        inst:2rvVZuy3X0l9ATwUENTjYJ,
+        inst:3IgqlyNZb9CR1JNQVbt_lX,
+        inst:3Tn8vdAOX0QxqbKYoVvsfp,
+        inst:3Tn8vdAOX0QxqbKYoVvtGG,
+        inst:3Tn8vdAOX0QxqbKYoVvtIS,
+        inst:3Tn8vdAOX0QxqbKYoVvtMt ;
+    bot:hasSpace <https://w3id.org/digitalconstruction/instance#03tkq$Dnf8jOaNsHm9RsT2>,
+        <https://w3id.org/digitalconstruction/instance#03tkq$Dnf8jOaNsHm9RsTO>,
+        <https://w3id.org/digitalconstruction/instance#03tkq$Dnf8jOaNsHm9RsTS>,
+        <https://w3id.org/digitalconstruction/instance#03tkq$Dnf8jOaNsHm9RsTU> ;
+    core:hasGlobalID "04XCdhzWXDtBhVSPQ7KoNt" ;
+    core:hasLabel "Level 1" ;
+    core:hasName "Level 1" .
+
+inst:04XCdhzWXDtBhVSPQ7KpcK a bot:Storey ;
+    bot:containsElement inst:3Tn8vdAOX0QxqbKYoVvsqi,
+        inst:3Tn8vdAOX0QxqbKYwVvsqi ;
+    core:hasGlobalID "04XCdhzWXDtBhVSPQ7KpcK" ;
+    core:hasLabel "Level 6" ;
+    core:hasName "Level 6" .

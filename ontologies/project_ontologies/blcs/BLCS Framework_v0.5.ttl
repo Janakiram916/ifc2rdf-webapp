@@ -1,0 +1,131 @@
+@prefix : <https://w3id.org/digitalconstruction/0.5/Lifecycle#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dicl: <https://w3id.org/digitalconstruction/0.5/Lifecycle#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/digitalconstruction/0.5/Lifecycle> .
+
+<https://w3id.org/digitalconstruction/0.5/Lifecycle> rdf:type owl:Ontology ;
+                                                      <http://purl.org/dc/terms/creator> "Janakiram Karlapudi (janakiram.karlapudi@tu-dresden.de)"^^xsd:string ;
+                                                      <http://purl.org/dc/terms/date> "2020-04-23T11:22:00"^^xsd:dateTime ;
+                                                      <http://purl.org/dc/terms/title> "\"Building Life-cycle Stage Framework Ontology\""^^xsd:string ;
+                                                      rdfs:comment "An ontology to describe the different Building Life-cycle stage frameworks and its stages irrespective of any standards involved in the construction projects."^^xsd:string ;
+                                                      rdfs:label "BLCS Framework Representation"^^xsd:string ;
+                                                      rdfs:seeAlso "https://digitalconstruction.github.io/"^^xsd:string ;
+                                                      owl:versionInfo "0.4"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/digitalconstruction/0.5/Lifecycle#hasNextStage
+dicl:hasNextStage rdf:type owl:ObjectProperty ;
+                  owl:inverseOf dicl:hasPreviousStage ;
+                  rdf:type owl:TransitiveProperty ;
+                  rdfs:domain dicl:BLStage ;
+                  rdfs:range dicl:BLStage ;
+                  owl:propertyChainAxiom ( dicl:hasNextStage
+                                           dicl:hasSubStage
+                                         ) ;
+                  <http://purl.org/dc/terms/description> "Enables the relation between the stages and defines the sequence of the stages."^^xsd:string ;
+                  rdfs:label "has Next Stage"^^xsd:string .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Lifecycle#hasPreviousStage
+dicl:hasPreviousStage rdf:type owl:ObjectProperty ,
+                               owl:TransitiveProperty ;
+                      rdfs:domain dicl:BLStage ;
+                      rdfs:range dicl:BLStage ;
+                      owl:propertyChainAxiom ( dicl:hasPreviousStage
+                                               dicl:hasSubStage
+                                             ) ;
+                      <http://purl.org/dc/terms/description> "Enables the relation between the stages and defines the sequence of the stages."^^xsd:string ;
+                      rdfs:label "has Previous Stage"^^xsd:string .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Lifecycle#hasStage
+dicl:hasStage rdf:type owl:ObjectProperty ;
+              owl:inverseOf dicl:isStageOf ;
+              rdfs:domain dicl:BLSFramework ;
+              rdfs:range dicl:BLStage ;
+              owl:propertyChainAxiom ( dicl:hasStage
+                                       dicl:hasSubStage
+                                     ) ;
+              <http://purl.org/dc/terms/description> "Enables the relationship between the BLCS framework and different stages involved in it."^^xsd:string ;
+              rdfs:label "has Stage"^^xsd:string .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Lifecycle#hasSubStage
+dicl:hasSubStage rdf:type owl:ObjectProperty ;
+                 owl:inverseOf dicl:hasSuperStage ;
+                 rdf:type owl:TransitiveProperty ;
+                 rdfs:domain dicl:BLStage ;
+                 rdfs:range dicl:BLStage ;
+                 <http://purl.org/dc/terms/description> "Describe the relationship between main and its sub stages involved in a specific BLCS framework."^^xsd:string ;
+                 rdfs:label "hasSubStage"^^xsd:string .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Lifecycle#hasSuperStage
+dicl:hasSuperStage rdf:type owl:ObjectProperty ,
+                            owl:TransitiveProperty ;
+                   rdfs:domain dicl:BLStage ;
+                   rdfs:range dicl:BLStage ;
+                   rdfs:comment "Describe the relationship between main and its sub stages involved in a specific BLCS framework."^^xsd:string ;
+                   rdfs:label "has Super Stage"^^xsd:string .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Lifecycle#isRelevantWith
+dicl:isRelevantWith rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    rdf:type owl:SymmetricProperty ;
+                    rdfs:domain dicl:BLStage ;
+                    rdfs:range dicl:BLStage .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Lifecycle#isStageOf
+dicl:isStageOf rdf:type owl:ObjectProperty ;
+               rdfs:domain dicl:BLStage ;
+               rdfs:range dicl:BLSFramework ;
+               rdfs:label "is Stage Of"^^xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/digitalconstruction/0.5/Lifecycle#BLSFramework
+dicl:BLSFramework rdf:type owl:Class ;
+                  <http://purl.org/dc/terms/description> "Introduces the different Building Life-cycle stage framework"^^xsd:string ;
+                  rdfs:label "BLS Framework"^^xsd:string .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Lifecycle#BLStage
+dicl:BLStage rdf:type owl:Class ;
+             <http://purl.org/dc/terms/description> "Introduces the different stages involved in building's life-cycle"^^xsd:string ;
+             rdfs:label "BLStage"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
