@@ -233,6 +233,11 @@ def execute():
         layout="wide",
         page_title="IFC Viewer ©karlapudi",
         page_icon="🎮",
+        menu_items={
+            'Get Help': 'mailto:janakiramkarlapudi841@gmail.com',
+            'Report a bug': "https://github.com/Janakiram916/ifc2rdf-webapp/issues",
+            'About': "## IFC data viewer!"
+        }
     )
     st.header("🎮 IFC.js Viewer")
     if "ifc_file" in session and session["ifc_file"]:

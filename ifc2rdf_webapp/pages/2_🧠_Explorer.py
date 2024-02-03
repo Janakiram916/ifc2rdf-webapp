@@ -36,13 +36,6 @@ def execute():
                 placeholder="",
                 key="instance_selection",
             )
-            col2.code(
-                get_triples_based_on_instance_name(
-                    session.rdf_graph, session.instance_selection, session.class_selection
-                ),
-                language="turtle",
-                line_numbers=True,
-            )
             col1.selectbox(
                 ":green[Pick an items from instance global id overview]",
                 get_instance_id_from_rdf_resource(
@@ -51,11 +44,18 @@ def execute():
                 placeholder="",
                 key="instance_id_selection",
             )
+            col1.code(
+                get_triples_based_on_instance_name(
+                    session.rdf_graph, session.instance_selection, session.class_selection
+                ),
+                language="turtle",
+                line_numbers=True,
+            )
             if not session.instance_id_selection == " Please Select":
                 code = get_triples_based_on_instance_uri(
                     session.rdf_graph, session.instance_id_selection
                 )
-                col1.code(code, language="turtle", line_numbers=True)
+                col2.code(code, language="turtle", line_numbers=True)
 
         else:
             st.header("Step 1: Load a file from the Home Page")

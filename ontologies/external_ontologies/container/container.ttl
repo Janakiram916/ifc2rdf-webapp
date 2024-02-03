@@ -1,0 +1,611 @@
+@prefix : <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://standards.iso.org/iso/21597/-1/ed-1/en/Container#> .
+
+<https://standards.iso.org/iso/21597/-1/ed-1/en/Container> rdf:type owl:Ontology ;
+                                                            dc:rights """© ISO 2020. All rights reserved. Unless otherwise specified, or required in the context of its implementation, no part of this publication may be reproduced or utilized otherwise in any form or by any means, electronic or mechanical, including photocopying, or posting on the internet or an intranet, without prior written permission. Permission can be requested from either ISO at the address below or ISO’s member body in the country of the requester. 
+ISO copyright office
+ CP 401, Ch. de Blandonnet 8, CH-1214 Vernier, Geneva
+ Phone: +41 22 749 01 11
+ Fax: +41 22 749 09 47
+ Email: copyright@iso.org
+ Website: www.iso.org
+ Published in Switzerland"""@en-gb ;
+                                                            dcterms:creator [ rdf:type foaf:Organization ;
+                                                                              foaf:address "ISO copyright office CP 401, Ch. de Blandonnet 8, CH-1214 Vernier, Geneva" ;
+                                                                              foaf:name "ISO" ;
+                                                                              foaf:website "http://www.iso.org" ;
+                                                                              foaf:Email "copyright@iso.org" ;
+                                                                              foaf:Fax "+41 22 749 09 47" ;
+                                                                              foaf:Phone "+41 22 749 01 11"
+                                                                            ] ;
+                                                            dcterms:description "ISO 21597 Part 1 gives a specification for a container that stores documents, along with a means of linking otherwise disconnected data within those documents. This container ontology is an RDF(S)/OWL file providing the object classes and properties that shall be used to specify the contents of a container."@en-gb ;
+                                                            dcterms:issued "2020-01-01"^^xsd:date ;
+                                                            dcterms:modified "2020-01-01"^^xsd:date ;
+                                                            dcterms:title "The ISO 21597 ICDD Part 1 Container ontology."@en-gb ;
+                                                            vann:preferredNamespacePrefix "ct" ;
+                                                            vann:preferredNamespaceUri <https://standards.iso.org/iso/21597/-1/ed-1/en/Container> ;
+                                                            owl:versionInfo "v1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/rights
+dc:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+dcterms:issued rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+dcterms:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/Email
+foaf:Email rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/Fax
+foaf:Fax rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/Phone
+foaf:Phone rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#alternativeDocument
+:alternativeDocument rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :alternativeDocumentTo ;
+                     rdfs:domain :Document ;
+                     rdfs:range :Document ;
+                     rdfs:comment "a property to link a document to an alternative version of that document"@en-gb ;
+                     rdfs:label "alternative document"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#alternativeDocumentTo
+:alternativeDocumentTo rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Document ;
+                       rdfs:range :Document ;
+                       rdfs:comment "a property to link a document to the main version of that document"@en-gb ;
+                       rdfs:label "alternative document to"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#belongsToContainer
+:belongsToContainer rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :containsDocument ;
+                    rdfs:domain :Document ;
+                    rdfs:range :ContainerDescription ;
+                    rdfs:comment "a owl property defining the relation between a document reference and a container"@en-gb ;
+                    rdfs:label "belongs to container"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#containedInContainer
+:containedInContainer rdf:type owl:ObjectProperty ;
+                      owl:inverseOf :containsLinkset ;
+                      rdf:type owl:InverseFunctionalProperty ;
+                      rdfs:domain :Linkset ;
+                      rdfs:range :ContainerDescription ;
+                      rdfs:comment "a relation from Linkset to the ContainerDescription to which it belongs."@en-gb ;
+                      rdfs:label "contained by container"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#containsDocument
+:containsDocument rdf:type owl:ObjectProperty ;
+                  rdfs:domain :ContainerDescription ;
+                  rdfs:range :Document ;
+                  rdfs:comment "a relation from ct:ContainerDescription to a document reference. Relations to multiple document references is allowed"@en-gb ;
+                  rdfs:label "contains model"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#containsLinkset
+:containsLinkset rdf:type owl:ObjectProperty ;
+                 rdfs:domain :ContainerDescription ;
+                 rdfs:range :Linkset ;
+                 rdfs:comment "a relation from a ct:ContainerDescription to a ct:Linkset reference. Multiple linkset references are allowed."@en-gb ;
+                 rdfs:label "contains linkset"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#created
+:created rdf:type owl:ObjectProperty ;
+         owl:inverseOf :createdBy ;
+         rdfs:domain :Party ;
+         rdfs:comment "a reference to an instance that was created by this Party"@en-gb ;
+         rdfs:label "created"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#createdBy
+:createdBy rdf:type owl:ObjectProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:range :Party ;
+           rdfs:comment "a reference to a creator of this instance which can only be a ct:Party (or a subclass of ct:Party)"@en-gb ;
+           rdfs:label "created by"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#modified
+:modified rdf:type owl:ObjectProperty ;
+          owl:inverseOf :modifiedBy ;
+          rdfs:domain :Party ;
+          rdfs:comment "a reference to an instance that was modified by this Party"@en-gb ;
+          rdfs:label "modified"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#modifiedBy
+:modifiedBy rdf:type owl:ObjectProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:range :Party ;
+            rdfs:comment "a reference to a modifier of this instance which can only be a ct:Party (or a subclass of ct:Party)"@en-gb ;
+            rdfs:label "modified by"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#nextVersion
+:nextVersion rdf:type owl:ObjectProperty ;
+             owl:inverseOf :priorVersion ;
+             rdf:type owl:InverseFunctionalProperty ;
+             rdfs:comment "an optional reference to the next version of this resource"@en-gb ;
+             rdfs:label "next version"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#priorVersion
+:priorVersion rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:comment "an optional reference to the prior version of this resource"@en-gb ;
+              rdfs:label "prior version"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#published
+:published rdf:type owl:ObjectProperty ;
+           owl:inverseOf :publishedBy ;
+           rdfs:domain :Party ;
+           rdfs:comment "a reference to a container published by a Party"@en-gb ;
+           rdfs:label "published"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#publishedBy
+:publishedBy rdf:type owl:ObjectProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:range :Party ;
+             rdfs:comment "a reference to the party responsible for making the container available"@en-gb ;
+             rdfs:label "published by"@en-gb .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://xmlns.com/foaf/0.1/address
+foaf:address rdf:type owl:DatatypeProperty .
+
+
+###  http://xmlns.com/foaf/0.1/name
+foaf:name rdf:type owl:DatatypeProperty .
+
+
+###  http://xmlns.com/foaf/0.1/website
+foaf:website rdf:type owl:DatatypeProperty .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#checksum
+:checksum rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :ContainerDescription
+                                      :SecuredDocument
+                                    )
+                      ] ;
+          rdfs:range xsd:string ;
+          rdfs:comment "a checksum hash for the document reference; the checksum algorithm is specified by the property checksumAlgorithm"@en-gb ;
+          rdfs:label "checksum"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#checksumAlgorithm
+:checksumAlgorithm rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain [ rdf:type owl:Class ;
+                                 owl:unionOf ( :ContainerDescription
+                                               :SecuredDocument
+                                             )
+                               ] ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "the algorithm used to generate the checksum hash"@en-gb ;
+                   rdfs:label "checksum algorithm"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#conformanceIndicator
+:conformanceIndicator rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "a string based indicator for ct:ContainerDescription to show to which part of the Standar this container conforms: for a Part 1 container, the value should be set to \"ICDD-Part1-Container\"; the range is not restricted to allow other indicator values"@en-gb ;
+                      rdfs:label "conformance indicator"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#creationDate
+:creationDate rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:range xsd:dateTime ;
+              rdfs:comment "The creation date as xsd:dateTime"@en-gb ;
+              rdfs:label "creation date"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#description
+:description rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:range xsd:string ;
+             rdfs:comment "a general description"@en-gb ;
+             rdfs:label "description"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#encryptionAlgorithm
+:encryptionAlgorithm rdf:type owl:DatatypeProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain :EncryptedDocument ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "optional string describing the encryption"@en-gb ;
+                     rdfs:label "encryption algorithm" .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#filename
+:filename rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :InternalDocument
+                                      :Linkset
+                                    )
+                      ] ;
+          rdfs:range xsd:string ;
+          rdfs:comment """the file name of a ct:Linkset or ct:InternalDocument; the root corresponds with  the payload-documents folder of the ICDD container; the forward slash character (\"/\") shall be used as a folder separator.
+NOTE: An example of a filename is “IFC Models/MyFile_1.ifc” which refers to the file MyFile_1.ifc inside the folder IFC Models inside the Payload documents folder in the container."""@en-gb ;
+          rdfs:label "filename"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#filetype
+:filetype rdf:type owl:DatatypeProperty ,
+                   owl:FunctionalProperty ;
+          rdfs:domain :Document ;
+          rdfs:range xsd:string ;
+          rdfs:comment "a string that specifies the file type such as  \"GML\", \"IFC\", \"shp\", \"xlsx\", \"pdf\",\"rvt\"; the string may be a compound string in indicating also version and data format (e.g. \"ifc-4-xml-zip\")"@en-gb ;
+          rdfs:label "filetype"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#foldername
+:foldername rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :FolderDocument ;
+            rdfs:range xsd:string ;
+            rdfs:comment """a folder name for specifying a folder where a multi file document can be found; the root corresponds with  the payload-documents folder of the ICDD container; the forward slash character (\"/\") shall be used as a folder separator.
+NOTE: An example of a foldername is “GIS Datasets/Terrain” which refers to the folder Terrain inside folder GIS Datasets inside the Payload documents folder in the container."""@en-gb ;
+            rdfs:label "foldername"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#format
+:format rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain :Document ;
+        rdfs:range xsd:string ;
+        rdfs:comment "The mediatype of a document following the Internet Assigned Numbers Authority's specification (https://www.iana.org/assignments/media-types/media-types.xhtml);examples are 'application/pdf' and 'audio/mpeg'"@en-gb ;
+        rdfs:label "format (mediatype)"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#modificationDate
+:modificationDate rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:range xsd:dateTime ;
+                  rdfs:comment "The modification date as xsd:dateTime"@en-gb ;
+                  rdfs:label "modification date"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#name
+:name rdf:type owl:DatatypeProperty ,
+               owl:FunctionalProperty ;
+      rdfs:range xsd:string ;
+      rdfs:comment "a name for a resource"@en-gb ;
+      rdfs:label "name"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#requested
+:requested rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:domain :Document ;
+           rdfs:range xsd:boolean ;
+           rdfs:comment "a boolean to indicate whether a document is required or not. When this property is not set the value can be interpreted as 'false'"@en-gb ;
+           rdfs:label "pending"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#url
+:url rdf:type owl:DatatypeProperty ,
+              owl:FunctionalProperty ;
+     rdfs:domain :ExternalDocument ;
+     rdfs:range xsd:anyURI ;
+     rdfs:comment "the URL where the exterrnal document can be found"@en-gb ;
+     rdfs:label "document URI"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#userID
+:userID rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:range xsd:string ;
+        rdfs:comment "The user defined ID"@en-gb ;
+        rdfs:label "user ID"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#versionDescription
+:versionDescription rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "an optional character string that may be used to provide a description for a version of the corresponding resource"@en-gb ;
+                    rdfs:label "version info"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#versionID
+:versionID rdf:type owl:DatatypeProperty ,
+                    owl:FunctionalProperty ;
+           rdfs:range xsd:string ;
+           rdfs:comment "an optional character string that may be used to identify a version of the corresponding resource"@en-gb ;
+           rdfs:label "version ID"@en-gb .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/vocommons/voaf#Vocabulary
+voaf:Vocabulary rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+foaf:Organization rdf:type owl:Class .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#ContainerDescription
+:ContainerDescription rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty :containsDocument ;
+                                        owl:allValuesFrom :Document
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :containsLinkset ;
+                                        owl:allValuesFrom :Linkset
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :nextVersion ;
+                                        owl:allValuesFrom :ContainerDescription
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :priorVersion ;
+                                        owl:allValuesFrom :ContainerDescription
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :createdBy ;
+                                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :priorVersion ;
+                                        owl:minCardinality "0"^^xsd:nonNegativeInteger
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :publishedBy ;
+                                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :conformanceIndicator ;
+                                        owl:cardinality "1"^^xsd:nonNegativeInteger
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :description ;
+                                        owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                                      ] ;
+                      rdfs:comment "a description for a ICDD container where all documents are listed and where Link datasets can be found"@en-gb ;
+                      rdfs:label "Container"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Document
+:Document rdf:type owl:Class ;
+          rdfs:subClassOf owl:Thing ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :nextVersion ;
+                            owl:allValuesFrom :Document
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :priorVersion ;
+                            owl:allValuesFrom :Document
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :nextVersion ;
+                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :priorVersion ;
+                            owl:minCardinality "0"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :name ;
+                            owl:cardinality "1"^^xsd:nonNegativeInteger
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :requested ;
+                            owl:maxCardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
+          owl:disjointUnionOf ( :ExternalDocument
+                                :InternalDocument
+                              ) ;
+          rdfs:comment "abstract class for references to a document; an individual shall at least be member of ct:ExternalDocument or ct:InternalDocument; and optionally, individuals can be a member of other subtypes of ct:Document such as ct:SecuredDocument and/or ct:EncryptedDocument"@en-gb ;
+          rdfs:label "Document"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#EncryptedDocument
+:EncryptedDocument rdf:type owl:Class ;
+                   rdfs:subClassOf :Document ;
+                   rdfs:comment "a reference to an encrypted document"@en-gb ;
+                   rdfs:label "Encrypted Document"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#ExternalDocument
+:ExternalDocument rdf:type owl:Class ;
+                  rdfs:subClassOf :Document ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :url ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
+                  rdfs:comment "a reference to a document outside a container"@en-gb ;
+                  rdfs:label "External Document"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#FolderDocument
+:FolderDocument rdf:type owl:Class ;
+                rdfs:subClassOf :Document ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :foldername ;
+                                  owl:cardinality "1"^^xsd:nonNegativeInteger
+                                ] ;
+                rdfs:comment "a document comprising of multiple files located in one folder, such as a GIS dataset consisting SHP files with associated DBF files"@en-gb ;
+                rdfs:label "Folder Document"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#InternalDocument
+:InternalDocument rdf:type owl:Class ;
+                  rdfs:subClassOf :Document ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :belongsToContainer ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :filename ;
+                                    owl:allValuesFrom xsd:string
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :filename ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :filetype ;
+                                    owl:cardinality "1"^^xsd:nonNegativeInteger
+                                  ] ;
+                  rdfs:comment "a reference to a document inside a container"@en-gb ;
+                  rdfs:label "Internal document"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Linkset
+:Linkset rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :nextVersion ;
+                           owl:allValuesFrom :Linkset
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :priorVersion ;
+                           owl:allValuesFrom :Linkset
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :priorVersion ;
+                           owl:minCardinality "0"^^xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :filename ;
+                           owl:cardinality "1"^^xsd:nonNegativeInteger
+                         ] ;
+         rdfs:comment "a reference to a RDF/OWL file containing links"@en-gb ;
+         rdfs:label "Linkset"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Organisation
+:Organisation rdf:type owl:Class ;
+              rdfs:subClassOf :Party ;
+              rdfs:comment "a class representing an organisation for provenance purposes"@en-gb ;
+              rdfs:label "Organisation"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Party
+:Party rdf:type owl:Class ;
+       rdfs:subClassOf owl:Thing ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :name ;
+                         owl:cardinality "1"^^xsd:nonNegativeInteger
+                       ] ;
+       owl:disjointUnionOf ( :Organisation
+                             :Person
+                           ) ;
+       rdfs:comment "an abstract class that represents the generalization of a ct:Organisation or a ct:Person; entities can refer to an individual of a subclass of ct:Party via the ct:creator, ct:modifier or ct:publisher object properties."@en-gb ;
+       rdfs:label "Party"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf :Party ;
+        rdfs:comment "a class representing an person for provenance purposes"@en-gb ;
+        rdfs:label "Person"@en-gb .
+
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container#SecuredDocument
+:SecuredDocument rdf:type owl:Class ;
+                 rdfs:subClassOf :Document ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :checksum ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :checksumAlgorithm ;
+                                   owl:cardinality "1"^^xsd:nonNegativeInteger
+                                 ] ;
+                 rdfs:comment "a document secured by a checksum algorithm (see also properties ct:checksum and ct:checksumAlgorithm )"@en-gb ;
+                 rdfs:label "Secured document"@en-gb .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://standards.iso.org/iso/21597/-1/ed-1/en/Container
+<https://standards.iso.org/iso/21597/-1/ed-1/en/Container> rdf:type owl:NamedIndividual ,
+                                                                    voaf:Vocabulary .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi

@@ -50,6 +50,11 @@ def main():
         layout="wide",
         page_title="RDFifyIFC ©karlapudi",
         page_icon="🏢",
+        menu_items={
+            'Get Help': 'mailto:janakiramkarlapudi841@gmail.com',
+            'Report a bug': "https://github.com/Janakiram916/ifc2rdf-webapp/issues",
+            'About': "## RDFying IFC. Developed to investigate the IFC data using Semantic Web stack!"
+        }
     )
     st.title("RDFying IFC data")
     st.markdown(

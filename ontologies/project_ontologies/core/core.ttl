@@ -1,0 +1,100 @@
+@prefix core: <https://w3id.org/digitalconstruction/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix bot: <https://w3id.org/bot#> .
+@prefix dicv: <https://w3id.org/digitalconstruction/0.5/Variables#> .
+@base <https://w3id.org/digitalconstruction/core#> .
+
+<https://w3id.org/digitalconstruction/core> a owl:Ontology ;
+    rdfs:label "Core Ontology" ;
+    vann:preferredNamespaceUri <https://w3id.org/digitalconstruction/core#> ;
+    vann:preferredNamespacePrefix "core" ;
+    dcterms:title "Core Ontology" ;
+    dcterms:description "An ontology describing the core concepts of digital universe." ;
+    owl:versionInfo "1.0.0" ;
+    owl:versionIRI <https://w3id.org/digitalconstruction/core/1.0.0> ;
+    dcterms:created "2023-12-29"^^xsd:date ;
+    dcterms:creator "Janakiram Karlapudi (janakiram.karlapudi@tu-dresden.de)" .
+
+
+#################################################################
+#    Classes
+#################################################################
+core:Project rdf:type owl:Class ;
+     rdfs:label "Project" ;
+     rdfs:subClassOf owl:Thing .
+
+core:Width rdf:type owl:Class ;
+    rdfs:label "Width" ;
+    rdfs:subClassOf dicv:Property .
+
+core:Thickness rdf:type owl:Class ;
+    rdfs:label "Thickness" ;
+    rdfs:subClassOf dicv:Property .
+
+core:Length rdf:type owl:Class ;
+    rdfs:label "Length" ;
+    rdfs:subClassOf dicv:Property .
+
+core:Height rdf:type owl:Class ;
+    rdfs:label "Height" ;
+    rdfs:subClassOf dicv:Property .
+
+core:ThermalTransmittance rdf:type owl:Class ;
+    rdfs:label "ThermalTransmittance" ;
+    rdfs:subClassOf dicv:Property .
+
+core:ThermalResistance rdf:type owl:Class ;
+    rdfs:label "ThermalResistance" ;
+    rdfs:subClassOf dicv:Property .
+
+core:ThermalMass rdf:type owl:Class ;
+    rdfs:label "ThermalMass" ;
+    rdfs:subClassOf dicv:Property .
+
+core:IsExternal rdf:type owl:Class ;
+    rdfs:label "IsExternal" ;
+    rdfs:subClassOf dicv:Property .
+
+core:Roughness rdf:type owl:Class ;
+    rdfs:label "Roughness" ;
+    rdfs:subClassOf dicv:Property .
+
+core:Absorptance rdf:type owl:Class ;
+    rdfs:label "Absorptance" ;
+    rdfs:subClassOf dicv:Property .
+
+#################################################################
+#    Object properties
+#################################################################
+core:hasSite rdf:type owl:ObjectProperty ;
+             rdfs:domain core:Project ;
+             rdfs:range bot:Site ;
+             rdfs:label "hasSite" .
+
+#################################################################
+#    Data properties
+#################################################################
+core:hasLabel rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:string ;
+          dcterms:title "hasLabel" .
+
+core:hasGlobalID rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string .
+
+core:hasName rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf core:hasLabel ;
+                 rdfs:range xsd:string .
+
+core:hasTag rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf core:hasGlobalID ;
+        rdfs:range xsd:string .
+
+core:hasValue rdf:type owl:DatatypeProperty ;
+          rdfs:range rdfs:Literal ;
+          rdfs:label "hasValue" .

@@ -34,11 +34,13 @@ _GET_INSTANCE_GRAPH_BASED_ON_URI_QUERY = f"""
     CONSTRUCT
     {{
         ?instance ?p ?o .
+        ?o ?p2 ?o2 .
     }}
     WHERE
     {{
         ?instance ?p ?o .
         FILTER(?instance = <{_INSTANCE_URI}>)
+        optional{{?o ?p2 ?o2 .}}
     }}
 """
 

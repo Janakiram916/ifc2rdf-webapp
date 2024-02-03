@@ -1,0 +1,129 @@
+@prefix : <https://w3id.org/0.5/LODO#> .
+@prefix LOD: <https://w3id.org/digitalconstruction/0.5/Lifecycle#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix obda: <https://w3id.org/obda/vocabulary#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/0.5/LODO> .
+
+<https://w3id.org/0.5/LODO> rdf:type owl:Ontology ;
+                             <http://purl.org/dc/terms/creator> "Janakiram Karlapudi (janakiram.karlapudi@tu-dresden.de)"^^xsd:string ;
+                             <http://purl.org/dc/terms/date> "2023-05-30T10:27:00"^^xsd:dateTime ;
+                             <http://purl.org/dc/terms/title> "\"LOD Framework Ontology\""^^xsd:string ;
+                             rdfs:comment "An Ontology to represent and accommdate the different LOD frameworks defined according to different standard of Practice"^^xsd:string ;
+                             rdfs:label "LOD Frameworks Representation"^^xsd:string ;
+                             rdfs:seeAlso "https://digitalconstruction.github.io/"^^xsd:string ;
+                             owl:versionInfo "0.6"^^xsd:string .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/date
+<http://purl.org/dc/terms/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/0.5/LODO#hasImmediateNextLevel
+:hasImmediateNextLevel rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :hasNextLevel ;
+                       owl:inverseOf :hasImmediatePreviousLevel .
+
+
+###  https://w3id.org/0.5/LODO#hasImmediatePreviousLevel
+:hasImmediatePreviousLevel rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :hasPreviousLevel .
+
+
+###  https://w3id.org/0.5/LODO#hasLevel
+:hasLevel rdf:type owl:ObjectProperty ;
+          owl:inverseOf :isLevelOf ;
+          rdfs:domain :LODFramework ;
+          rdfs:range :LODLevel ;
+          owl:propertyChainAxiom ( :hasLevel
+                                   :hasSubLevel
+                                 ) ;
+          <http://purl.org/dc/terms/description> "Enables the connection betweendifferent levels to its framework"^^xsd:string ;
+          rdfs:label "has Level"^^xsd:string .
+
+
+###  https://w3id.org/0.5/LODO#hasNextLevel
+:hasNextLevel rdf:type owl:ObjectProperty ;
+              owl:inverseOf :hasPreviousLevel ;
+              rdf:type owl:TransitiveProperty ;
+              rdfs:domain :LODLevel ;
+              rdfs:range :LODLevel ;
+              <http://purl.org/dc/terms/description> "Indicates the sequence of levels."^^xsd:string ;
+              rdfs:label "has Next Level"^^xsd:string .
+
+
+###  https://w3id.org/0.5/LODO#hasPreviousLevel
+:hasPreviousLevel rdf:type owl:ObjectProperty ,
+                           owl:TransitiveProperty ;
+                  rdfs:domain :LODLevel ;
+                  rdfs:range :LODLevel ;
+                  <http://purl.org/dc/terms/description> "Indicates the sequence of levels."^^xsd:string ;
+                  rdfs:label "has Previous Level"^^xsd:string .
+
+
+###  https://w3id.org/0.5/LODO#hasSubLevel
+:hasSubLevel rdf:type owl:ObjectProperty ;
+             owl:inverseOf :hasSuperLevel ;
+             rdf:type owl:TransitiveProperty ;
+             rdfs:domain :LODLevel ;
+             rdfs:range :LODLevel ;
+             <http://purl.org/dc/terms/description> "Represents the relation between Upper levels and its sub level"^^xsd:string ;
+             rdfs:label "has Sub Level"^^xsd:string .
+
+
+###  https://w3id.org/0.5/LODO#hasSuperLevel
+:hasSuperLevel rdf:type owl:ObjectProperty ,
+                        owl:TransitiveProperty ;
+               rdfs:domain :LODLevel ;
+               rdfs:range :LODLevel ;
+               rdfs:comment "Represents the relation between Upper levels and its sub level"^^xsd:string ;
+               rdfs:label "has super level"^^xsd:string .
+
+
+###  https://w3id.org/0.5/LODO#isLevelOf
+:isLevelOf rdf:type owl:ObjectProperty ;
+           rdfs:domain :LODLevel ;
+           rdfs:range :LODFramework ;
+           rdfs:label "is Level Of"^^xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/0.5/LODO#LODFramework
+:LODFramework rdf:type owl:Class ;
+              owl:disjointWith :LODLevel ;
+              <http://purl.org/dc/terms/description> "Represents the defined frameworks according to National or International standards"^^xsd:string ;
+              rdfs:label "LOD Framework"^^xsd:string .
+
+
+###  https://w3id.org/0.5/LODO#LODLevel
+:LODLevel rdf:type owl:Class ;
+          <http://purl.org/dc/terms/description> "Indicates the different LOD levels deffined with in the different LOD frameworks"^^xsd:string ;
+          rdfs:label "LOD Level"^^xsd:string .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
