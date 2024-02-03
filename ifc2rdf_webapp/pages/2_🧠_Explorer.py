@@ -14,8 +14,8 @@ def execute():
         page_icon="🧠",
         initial_sidebar_state="expanded",
         menu_items={
-            'Get Help': 'https://www.extremelycoolapp.com/help',
-            'Report a bug': "mailto:janakiramkarlapudi841@gmail.com",
+            'Get Help': 'mailto:janakiramkarlapudi841@gmail.com',
+            'Report a bug': "https://github.com/Janakiram916/ifc2rdf-webapp/issues",
             'About': "## RDF Data explorer. Developed to investigate the RDF data!"
             }
     )

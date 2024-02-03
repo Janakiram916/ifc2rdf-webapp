@@ -48,13 +48,13 @@ def generate_rdf_data():
 def main():
     st.set_page_config(
         layout="wide",
-        page_title="IFC Processor ©karlapudi",
+        page_title="RDFifyIFC ©karlapudi",
         page_icon="🏢",
     )
-    st.title("IFC Processor")
+    st.title("RDFying IFC data")
     st.markdown(
         """ 
-    ## A tool to visualize BIM data and convert it to RDF.
+    ## A tool for processing BIM data and leveraging through Semantic Web technologies.
     
     ###  📁 Click on `Browse File` in the Side Bar to start
     """
