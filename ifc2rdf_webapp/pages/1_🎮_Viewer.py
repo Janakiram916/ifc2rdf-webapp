@@ -12,7 +12,8 @@ import streamlit.components.v1 as components  #
 #                                                                           #
 # Tell streamlit that there is a component called ifc_js_viewer,            #
 # and that the code to display that component is in the "frontend" folder   #
-frontend_dir = (Path(__file__).parent / "frontend-viewer").absolute()  #
+# frontend_dir = (Path(__file__).parent / "frontend-viewer").absolute()  #
+frontend_dir = "ifc2rdf_webapp/pages/frontend-viewer"
 _component_func = components.declare_component(  #
     "ifc_js_viewer",
     path=str(frontend_dir),  #
@@ -37,7 +38,7 @@ def ifc_js_viewer(  #
 def draw_3d_viewer():
     def get_current_ifc_file():
         return session.array_buffer
-
+    st.write(frontend_dir)
     session.ifc_js_response = ifc_js_viewer(get_current_ifc_file())
     st.sidebar.success("Visualiser loaded")
 

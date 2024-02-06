@@ -56,10 +56,11 @@ def execute():
                     session.rdf_graph, session.instance_id_selection
                 )
                 col2.code(code, language="turtle", line_numbers=True)
-
+        elif "ifc_file" in session and session["ifc_file"]:
+            st.header("Step 2: Convert IFC file to RDF using converter from the Home Page")
         else:
             st.header("Step 1: Load a file from the Home Page")
-            st.header("Step 2: Convert IFC file to RDF using converter from the Home Page")
+
     with tab2:
         st.header("Lifecycle Ontology")
         tab2.markdown(
