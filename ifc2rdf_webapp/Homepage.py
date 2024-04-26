@@ -1,4 +1,3 @@
-
 import ifcopenshell
 import streamlit as st
 from ifc2rdftool.ifc2rdf_tool import create_rdf_graph_from_ifc
