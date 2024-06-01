@@ -22,7 +22,8 @@ def execute():
     )
     st.header(" 📊 Validator ")
 
-    if "rdf_data" in session:
+    if "rdf_data" in session and session["rdf_data"]:
+        st.write("")
         pass
     elif "ifc_file" in session and session["ifc_file"]:
         st.header("Step 2: Convert IFC file to RDF using converter from the Home Page")

@@ -1,0 +1,74 @@
+ex: sh:declare [
+		sh:prefix "ex" ;
+		sh:namespace <https://w3id.org/digitalconstruction/validation#> ;
+	] .
+
+sh: sh:declare [
+		sh:prefix "sh" ;
+		sh:namespace <http://www.w3.org/ns/shacl> ;
+	] .
+
+xsd: sh:declare [
+		sh:prefix "xsd" ;
+		sh:namespace <http://www.w3.org/2001/XMLSchema#> ;
+	] .
+
+rdfs: sh:declare [
+		sh:prefix "rdfs" ;
+		sh:namespace <http://www.w3.org/2000/01/rdf-schema#> ;
+	] .
+
+rdf: sh:declare [
+		sh:prefix "rdf" ;
+		sh:namespace <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
+	] .
+
+beo: sh:declare [
+		sh:prefix "beo" ;
+		sh:namespace <https://pi.pauwel.be/voc/buildingelement#> ;
+	] .
+
+bot: sh:declare [
+		sh:prefix "bot" ;
+		sh:namespace <https://w3id.org/bot#> ;
+	] .
+
+core: sh:declare [
+		sh:prefix "core" ;
+		sh:namespace <https://w3id.org/digitalconstruction/core#> ;
+	] .
+
+dicm: sh:declare [
+		sh:prefix "dicm" ;
+		sh:namespace <https://w3id.org/digitalconstruction/0.5/Materials#> ;
+	] .
+
+dicv: sh:declare [
+		sh:prefix "dicv" ;
+		sh:namespace <https://w3id.org/digitalconstruction/0.5/Variables#> ;
+	] .
+
+dicl: sh:declare [
+		sh:prefix "dicl" ;
+		sh:namespace <https://w3id.org/digitalconstruction/0.5/Lifecycle#> ;
+	] .
+
+geo1: sh:declare [
+		sh:prefix "geo1" ;
+		sh:namespace <http://www.w3.org/2003/01/geo/wgs84_pos#> ;
+	] .
+
+inst: sh:declare [
+		sh:prefix "inst" ;
+		sh:namespace <https://w3id.org/digitalconstruction/instance#> ;
+	] .
+
+level: sh:declare [
+		sh:prefix "level" ;
+		sh:namespace <https://w3id.org/digitalconstruction/0.5/Levels#> ;
+	] .
+
+stage: sh:declare [
+		sh:prefix "stage" ;
+		sh:namespace <https://w3id.org/digitalconstruction/0.5/Stages#> ;
+	] .

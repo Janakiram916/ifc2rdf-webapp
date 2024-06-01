@@ -1,0 +1,30 @@
+# Every instance must contain GlobalId and Label
+
+ex:InstanceShape1 a sh:NodeShape;
+                   sh:nodeKind sh:IRI ;
+                   dicl:hasLevel level:LOD_100 ;
+                   sh:property [
+                                   sh:path core:hasLabel ;
+                                   sh:datatype xsd:string ;
+                                   sh:minCount 1 ;
+                                   sh:maxCount 1 ;
+                                   sh:message "Instance must have label (#InstanceShape1)" ;
+                               ] ;
+                   sh:property [
+                                   sh:path core:hasGlobalID;
+                                   sh:datatype xsd:string ;
+                                   sh:minCount 1 ;
+                                   sh:maxCount 1 ;
+                                   sh:message "Instance must have GlobalId (#InstanceShape1)" ;
+                               ] ;
+                   sh:target [
+                                 a sh:SPARQLTarget ;
+                                 sh:prefixes rdf: ;
+                                 sh:select """
+                                     SELECT ?this
+                                     WHERE {
+                                        ?this a ?resource_class .
+                                     }
+                                  """ ;
+                              ] ;
+    .
