@@ -22,6 +22,7 @@ pip = "^23.3.2"
 pydotplus = "^2.0.2"
 ipython = "^8.21.0"
 graphviz = "^0.20.1"
+watchdog = "^4.0.1"
 
 
 [build-system]
